@@ -13,29 +13,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
 
-      - name: Install Dependencies
-        run: |
-          cd front 
-          npm install
+    - name: Navigate to Frontend Directory
+      run: cd oc-10/front
 
-      - name: Build Angular Application
-        run: |
-          cd front 
-          npm run build
+    - name: Install Dependencies
+      run: npm install
 
-      - name: Run Tests with Coverage
-        run: npm run test -- --code-coverage
+    - name: Build Angular Application
+      run: npm run build
 
-      - name: Upload Coverage Report
-        uses: actions/upload-artifact@v2
-        with:
-          name: coverage
-          path: coverage
+    - name: Run Tests with Coverage
+      run: npm run test -- --code-coverage
+
+    - name: Upload Coverage Report
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage
+        path: oc-10/front/coverage
