@@ -30,7 +30,7 @@ jobs:
       working-directory: front
 
     - name: Run Tests with Coverage
-      run: npm run test -- --code-coverage
+      run: npm run test --code-coverage
       working-directory: front
 
     - name: Upload Coverage Report
