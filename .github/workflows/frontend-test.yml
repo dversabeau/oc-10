@@ -30,7 +30,7 @@ jobs:
       working-directory: front
 
     - name: Run Tests with Coverage
-      run: npm test -- --watch=false --browsers=ChromeHeadless
+      run: npm test -- --watch=false --browsers=ChromeHeadless --code-coverage
       working-directory: front
 
     - name: echo en cascade
