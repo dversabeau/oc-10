@@ -34,9 +34,15 @@ jobs:
       working-directory: front
 
     - name: echo en cascade
-      run: | 
-        echo front
-        echo front/coverage
+      run: |
+        pwd
+        cd front
+        ls
+        cd coverage
+        ls
+        cd bobapp
+        ls
+      
 
     - name: Upload Coverage Report
       uses: actions/upload-artifact@v2
