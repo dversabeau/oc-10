@@ -33,6 +33,11 @@ jobs:
       run: npm test -- --watch=false --browsers=ChromeHeadless
       working-directory: front
 
+    - name: echo en cascade
+      run: | 
+        echo front
+        echo front/coverage
+
     - name: Upload Coverage Report
       uses: actions/upload-artifact@v2
       with:
