@@ -37,4 +37,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: coverage
-        path: oc-10/front/coverage/bobapp/index.html
+        path: front/coverage/bobapp/index.html
