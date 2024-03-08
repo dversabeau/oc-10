@@ -31,18 +31,7 @@ jobs:
 
     - name: Run Tests with Coverage
       run: npm test -- --watch=false --browsers=ChromeHeadless --code-coverage
-      working-directory: front
-
-    - name: echo en cascade
-      run: |
-        pwd
-        cd front
-        ls
-        cd coverage
-        ls
-        cd bobapp
-        ls
-      
+      working-directory: front      
 
     - name: Upload Coverage Report
       uses: actions/upload-artifact@v2
