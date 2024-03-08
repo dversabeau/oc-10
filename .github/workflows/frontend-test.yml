@@ -22,7 +22,7 @@ jobs:
         node-version: '20'
 
     - name: Navigate to Frontend Directory
-      run: cd ../front
+      run: cd oc-10/front
 
     - name: Install Dependencies
       run: npm install
