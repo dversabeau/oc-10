@@ -1,4 +1,4 @@
-name: Frontend Tests
+name: Frontend tests
 
 on:
   push:
@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -22,18 +22,25 @@ jobs:
           node-version: '14'
 
       - name: Install Dependencies
-        run: |
-          cd front
-          npm run build
+        run: npm install
+        working-directory: front
 
       - name: Build Angular Application
         run: npm run build
+        working-directory: front
 
       - name: Run Tests with Coverage
-        run: npm run test -- --code-coverage
+        run: npm test -- --watch=false --browsers=ChromeHeadless --code-coverage
+        working-directory: front
 
-      - name: Upload Coverage Report
-        uses: actions/upload-artifact@v2
+      - name: Upload report coverage front
+        uses: actions/upload-artifact@v4
         with:
-          name: coverage
-          path: coverage
+          name: report-coverage-front
+          path: front/coverage/bobapp/*
+
+      - name: Download report coverage front
+        uses: actions/download-artifact@v4
+        with:
+          name: report-coverage-front
+
