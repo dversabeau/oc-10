@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: report-coverage-back
-          path: target/site/jacoco/*
+          path: back/target/site/jacoco/*
 
       - name: Download report coverage back
         uses: actions/download-artifact@v4
