@@ -25,6 +25,7 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
+        working-directory: back
 
       - name: Upload report coverage back
         uses: actions/upload-artifact@v4
