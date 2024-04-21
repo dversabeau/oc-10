@@ -29,4 +29,4 @@ jobs:
           context: ./front
           file: ./front/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/bobapp:front
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/bobapp-front
