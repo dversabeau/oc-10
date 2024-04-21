@@ -19,13 +19,6 @@ jobs:
         with:
           java-version: 11
           distribution: 'adopt'
-      
-      - name: Build and analyze Frontend code
-        run: |
-          cd front
-          npm install
-          npm run build
-          sonar-scanner -Dsonar.projectKey=front -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=dversabeau -Dsonar.login=$SONAR_TOKEN
   
       - name: Build and analyze Backend code
         run: |
