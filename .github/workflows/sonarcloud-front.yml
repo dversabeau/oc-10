@@ -1,4 +1,4 @@
-name: SonarCloud Back
+name: SonarCloud Front
 on:
   push:
     branches:
@@ -20,11 +20,11 @@ jobs:
           java-version: 17
           distribution: 'zulu'
   
-      - name: Build and analyze Backend code
+      - name: Build and analyze Front end
+        uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-         cd front
-         mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=dversabeau_oc-10
-          
+        with:
+          projectBaseDir: ./front/
+
