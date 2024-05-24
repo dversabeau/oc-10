@@ -66,10 +66,7 @@ jobs:
       runs-on: ubuntu-latest
       needs: test
       
-      steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-          
+      steps:          
       - name: Build and analyze Front end
         uses: SonarSource/sonarcloud-github-action@master
         env:
