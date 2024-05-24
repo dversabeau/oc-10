@@ -39,6 +39,11 @@ jobs:
         name: report-coverage-front
         path: front/coverage/bobapp
 
+    - name: Commit Karma report
+      run: |
+        git add front/coverage/bobapp
+        git commit -m "Add Karma report"
+
     - name: Push Karma report
       uses: ad-m/github-push-action@master
       with:
