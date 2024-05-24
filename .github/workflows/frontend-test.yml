@@ -37,7 +37,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: report-coverage-front
-        path: front/coverage/bobapp/*
+        path: front/coverage/bobapp
 
     - name: Download report coverage front
       uses: actions/download-artifact@v4
