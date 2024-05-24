@@ -60,19 +60,12 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: report-coverage-front
-
-    
-  sonarcloud:
-      runs-on: ubuntu-latest
-      needs: test
       
-      steps:          
-      - name: Build and analyze Front end
-        uses: SonarSource/sonarcloud-github-action@master
-        with:
-          projectBaseDir: front
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FRONT }}
-
-      
+    - name: Build and analyze Front end
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FRONT }}
+      with:
+        projectBaseDir: front
+  
