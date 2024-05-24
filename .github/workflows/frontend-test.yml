@@ -39,6 +39,12 @@ jobs:
         name: report-coverage-front
         path: front/coverage/bobapp
 
+    - name: Push Karma report
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+
     - name: Download report coverage front
       uses: actions/download-artifact@v4
       with:
